@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+.main {
+    height: 100vh; /* Main abarque toda pagina */
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('https://i.pinimg.com/originals/dc/de/eb/dcdeeb0b0074bbe4d53f2f8bdc8f7631.jpg');
+}
+
+.login-container {
+    /* height: 400px; */
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(238, 183, 112, 0.74);
+    border-radius: 10px;
+    text-align: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.labels {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.inputs {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    background-color: #f7f5f5;
+}
+
+#form > div { /*Aplica a todos los div debajo del form pero especificamente los de segundo nivel debajo del formulario*/
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.logo-container {
+    width: 100%;
+}
+
+.logo-container img {
+    width: 120px;
+}

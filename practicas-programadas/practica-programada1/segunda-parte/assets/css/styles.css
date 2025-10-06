@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #8cc0eb11;
+}
+
+.titulo {
+    text-align: center;       
+    padding: 20px;           
+    font-size: 30px;          
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #2e59e6;                      
+}
+
+.img-logo {
+    display: block;       
+    margin: 0 auto;       
+    width: 60px;        
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    background-color: #619feb;
+    padding: 5px;
+}
+
+.navbar a {
+    color: rgb(252, 252, 252);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    padding: 10px;
+}
+.navbar a:hover {
+    background-color: #a4bee2;
+    border-radius: 5px;
+    color: black;
+}
+
+.perfil {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(60, 160, 241, 0.568);
+    border-radius: 50px;
+    text-align: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.perfiles-container {
+    display:flex;         
+    gap: 20px;              
+    justify-content: center; 
+    flex-wrap: wrap;         
+}
+
+.nombre {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #000000;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.especialidad {
+    font-size: 18px;
+    color: #343333;
+    margin-bottom: 10px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#descripion {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+    font-family:Arial, Helvetica, sans-serif ;
+}
+
+.boton {
+    display: inline-block;
+    padding: 10px;
+    background-color: #007bffb0;
+    color: white;
+    border-radius: 10px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    padding: 20px;      
+    gap: 40px;
+}
+
+ img {
+    max-width: 30%;
+    height: 30%;
+    margin-bottom: 20px;
+}
+
+
+.comentarios {
+    display: flex;
+    text-align: center;
+    padding: 20px;
+    justify-content: center;
+    flex-wrap: wrap; 
+}
+
+  h2 {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.slogan {
+    text-align: center;       
+    padding: 15px;           
+    font-size: 16px;          
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #374066;   
+}
+
+.comentarios h3 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 5px;
+}
+
+.comentarios p {
+    font-family:Arial, Helvetica, sans-serif ;
+    margin-bottom: 10px;
+}
+
+.comentarios .fecha {
+    color: #2e59e6;
+    font-weight: bold;
+}
+
+.tarjeta {
+    display: inline-block;
+    vertical-align: top;
+    width: 250px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(9, 95, 194, 0.836);
+    background-color: #ffffff;
+}
+
+
+
+
+

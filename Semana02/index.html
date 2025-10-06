@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML</title>  
+
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <!-- CSS interno -->
+  <style>
+    * {
+      background-color: #efe6e6;
+    }
+
+    h1 {
+      color: #dddddd; /* prevalece sobre aquamarine */
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Hola Mundo</h1>
+  <h2 style="color:#157f88;">Subtitulo</h2>
+  <h3 id="subtitulo">Subtitulo 2</h3>
+  <h4 id="estilos">Subtitulo 3</h4>
+
+
+  <!-- Formulario principal -->
+  <div class="main">
+    <div class="content">
+      <form action="agregar_cliente.php" method="get">
+        <fieldset>
+          <div>
+            <label class="color_verde">Nombre Completo</label>
+            <input type="text" name="nombre">
+          </div>
+          <div>
+            <label class="color_verde">Edad</label>
+            <input type="number" name="edad">
+          </div>
+          <div>
+            <label class="color_verde">Email</label>
+            <input type="email" name="email" value="correo@gmail.com">
+          </div>
+        </fieldset>
+      </form>
+
+      <form action=""> 
+        <div>
+          <label for="password">Contraseña</label>
+          <input type="password" name="password" id="password">
+        </div>
+        <div>
+          <label for="color">Color</label>
+          <input type="color" name="color" id="color">
+        </div>
+        <div>
+          <label for="archivo">Archivo</label>
+          <input type="file" name="archivo" id="archivo">
+        </div>
+        <div>
+          <label for="fecha">Fecha</label>
+          <input type="date" name="fecha" id="fecha">
+        </div>
+        <div>
+          <label for="comentarios">Comentarios</label>
+          <textarea name="comentarios" id="comentarios"></textarea>
+        </div>
+
+        <div>
+          <input type="button" value="Guardar">
+          <input type="submit" value="Guardar Submit">
+          <button type="button">Guardar Button</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <hr>
+    <p>Ejemplo de párrafo</p>
+  <a href="https://www.google.com">Este es un enlace</a>
+
+
+  <ul>
+    <li>Elemento 1 de lista</li>
+    <li>Elemento 2 de lista</li>
+    <li>Elemento 3 de lista</li>
+  </ul>
+
+  <ol>
+    <li>Elemento 1 de lista ordenada</li>
+    <li>Elemento 2 de lista ordenada</li>
+    <li>Elemento 3 de lista ordenada</li>
+  </ol>
+
+  <!-- Tabla -->
+  <table>
+    <thead> 
+      <tr> 
+        <th>Identificación</th> 
+        <th>Nombre</th> 
+        <th>Correo</th> 
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1234567</td> 
+        <td>Kevin Yang</td> 
+        <td>correo@gmail.com</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Estructura semántica -->
+  <header></header>
+  <nav></nav>
+  <main>
+    <article></article>
+    <section></section>
+  </main>
+  <footer></footer>
+
+  
+  <img src="assets/img/imagen1.jpg" alt="Imagen de ejemplo">  
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

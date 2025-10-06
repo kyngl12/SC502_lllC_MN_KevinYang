@@ -1,0 +1,107 @@
+/* Estilos básicos */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column; /* Organiza los elementos en columna */
+    height: 100vh; /* Asegura que el body ocupe toda la altura de la pantalla */
+}
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Hace que el contenedor crezca para ocupar el espacio disponible */
+}
+
+/* Encabezado */
+.header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    height: 50px; /* Definimos una altura fija para el header */
+}
+
+/* Barra lateral de navegación */
+.sidebar {
+    background-color: #2196F3;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    flex: 1; /* Usa flex 1 para que ocupe una fracción del espacio */
+}
+
+/* Contenido principal */
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    flex: 3; /* Usa flex 3 para que ocupe 3 veces más espacio que la barra lateral */
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+/* Columna de contenido */
+.content-1, .content-2, .content-3 {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ccc;
+    flex: 1; /* Usa flex 1 para que las columnas tengan un tamaño equitativo */
+    box-sizing: border-box;
+}
+
+/* Publicidad o contenido extra */
+.extra {
+    background-color: #ff5722;
+    color: white;
+    padding: 20px;
+    flex: 1; /* Usa flex 1 para que el contenido extra tenga el mismo tamaño que las columnas */
+    box-sizing: border-box;
+}
+
+/* Pie de página */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    height: 50px; /* Definimos una altura fija para el footer */
+}
+
+.column{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+/* Estilos Responsivos */
+@media (max-width: 800px) {
+    /* La estructura cambia para dispositivos móviles */
+    .container {
+        flex-direction: column; /* Coloca los elementos en columna */
+    }
+
+    .column {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        flex: 0 1 auto; 
+    }
+
+    .content {
+        flex: 0 1 100%; /* Hace que el contenido ocupe todo el ancho */
+    }
+
+    .content-1, .content-2, .content-3 {
+        flex: 1 1 100%; /* Las columnas ocupan el 100% del ancho en dispositivos móviles */
+    }
+
+    .extra {
+        flex: 1 1 auto; 
+    }
+
+}

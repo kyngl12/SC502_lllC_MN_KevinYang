@@ -1,0 +1,40 @@
+* {
+    background-color:blueviolet;
+    box-sizing: border-box;
+}
+
+.color_verde {
+    color: #0b7d23;
+}
+
+#subtitulo {
+        font-size: 25px;
+}
+
+#estilos {
+    width: 400px;
+    height: 100px;
+    border: 5 solid #296368;
+    border-color: #0b7d23;
+    border-width: 2px;
+    border-style: dotted;
+    padding: 10px;
+    padding: 5px 10 px 5px 10px;
+    padding-left: 20px;
+    padding-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    margin: 50px;
+}
+
+.main {
+    width: 600px;
+    margin: 0 auto;
+}
+
+.content {
+    height: auto;
+    width: 90%;
+    padding: 10px;
+    margin: 0 auto;
+}
