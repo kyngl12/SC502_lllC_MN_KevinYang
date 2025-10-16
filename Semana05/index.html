@@ -2,18 +2,15 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/style.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
     <title>Bootstrap & JS</title>
 </head>
 
 <body>
-
-    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Navbar</a>
@@ -39,9 +36,11 @@
                             <li><a class="dropdown-item" href="#">Action</a></li>
                             <li><a class="dropdown-item" href="#">Another action</a></li>
                             <li>
-                                <hr class="dropdown-divider">
+                                <hr class="dropdown-divider" />
                             </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -50,73 +49,76 @@
                 </ul>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                    <button class="btn btn-outline-success" type="submit">
+                        Search
+                    </button>
                 </form>
             </div>
         </div>
     </nav>
 
     <div class="container">
-        <div class="row my-5 ">
+        <div class="row my-5">
 
             <div class="col-sm-12 col-md-8 offset-md-2">
                 <div class="alert alert-warning" role="alert">
-                    A simple warning alert—check it out!
+                    A simple primary alert—check it out!
                 </div>
 
                 <h1>Lista de clientes!</h1>
+                <button id="btnCargar" type="button" class="btn btn-outline-primary">Cargar</button>
 
-                <button class="btn btn-primary" id="btnCargar" type="submit">Cargar</button>
-                
-                <table id="tb_clientes" class="table table-striped table-hover mt-10">
+                <table class="table table-striped table-hover">
                     <thead>
                         <tr>
-                            <th scope="col"></th>
+                            <th></th>
                             <th scope="col">Codigo</th>
                             <th scope="col">Nombre</th>
                             <th scope="col">Correo</th>
                             <th scope="col">Telefono</th>
                         </tr>
-                    </thead>
-                    <tbody>
+                    </thead>  
+                    <tbody id="tbody-section">
+                        <tr>
+                            <th>1234</th>
+                            <td>Patitos S.A.</td>
+                            <td>patito@correo.com</td>
+                            <td>2288-5656</td>
+                        </tr>
                     </tbody>
                 </table>
-            </div> 
+            </div>
 
-            <div class="col-sm-12 col-md-8 offset-md-2">
+             <div class="col-sm-12 col-md-8 offset-md-2">
             
                 <div class="card" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="https://cdn-icons-png.flaticon.com/512/4086/4086652.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 id="nombreCliente" class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s
                             content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
-                </div>
-            
+                </div>           
             </div>
+
 
             <div class="col-sm-12 col-md-8 offset-md-2">
-                
-                <input id="input-nombre" class="form-control" type="text" placeholder="Digite su nombre" >
-            
+
+                <input id="input-nombre" class="form-control" type="text" placeholder="Digite su nombre">
+
                 <div class="alert alert-primary" role="alert">
-                    <span id="textNombre"></span>
+                    <span id="texto-nombre"></span>
                 </div>
 
             </div>
-
-
 
         </div>
     </div>
 
+    <script src="assets/js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
-
-    <script src="assets/js/main.js"></script>
 </body>
 
 </html>
