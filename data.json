@@ -1,0 +1,8 @@
+{
+  "nombre": "Kevin",
+  "apellidos": "Yang",
+  "correo": "kevin@gmail.com",
+  "password": "1234",
+  "confirm_password": "1234",
+  "observaciones": "Observaciones"
+}

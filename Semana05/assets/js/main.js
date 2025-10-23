@@ -65,9 +65,65 @@ document.addEventListener("DOMContentLoaded", function () {
     const input = document.querySelector('#input-nombre');
     input.addEventListener('change', mostrarNombre);
 
+    const form = document.querySelector('#formulario');
+    formulario.addEventListener('submit', submitFormulario);
+
+    cargarUsuarios(); // Llamar a la función para cargar usuarios desde API
+
+    const btnAgregar = document.querySelector('#btnAgregar');
+    btnAgregar.addEventListener('click', agregarCliente);
+
+    cargarClientesHtml(); // Cargar clientes al iniciar la página (sin presionar boton)
+
     
 });
 
+// ============================
+// FUNCIÓN PARA API
+// ============================
+
+const cargarUsuarios = async () => { //Asincrono: Ejecuta algo y espera resolucion para continuar (lazy and await)
+
+    //fetch('https://jsonplaceholder.typicode.com/users')
+      //.then(response => response.json())
+      //.then(json => console.log(json));
+
+      const response = await fetch('https://jsonplaceholder.typicode.com/users') //Decirle que espere, fetch se resuelva y variable tenga datos
+      //console.log({response});
+
+      const data = await response.json(); //Esperar a que se convierta a json
+      //console.log({data}); 
+
+      data.forEach(user => {
+        console.log('name: ' + user.name);
+        console.log('username: ' + user.username);
+      });
+}
+
+
+// ============================
+// FUNCIÓN PARA FORMULARIO
+// ============================
+
+const submitFormulario = () => {
+    event.preventDefault(); // Evitar comportamiento por defecto del formulario
+    console.log('submit del formulario');
+
+    const form = document.querySelector('#formulario');
+    const formData = new FormData(form); // Obtener datos del formulario
+    const data = Object.fromEntries(formData.entries()); // Convertir a objeto literal
+
+    console.log(data);
+
+    console.log(`El nombre es: ${data.nombre}`);
+    console.log(`Los apellidos son: ${data.apellidos}`);
+    console.log(`El correo es: ${data.correo}`);
+
+    const dataJason = JSON.stringify(data); // Convertir a JSON para enviar a api
+    console.log(dataJason);
+
+
+}
 
 // ============================
 // FUNCIÓN PARA MOSTRAR NOMBRE
@@ -177,9 +233,14 @@ const cargarClientes = () => {
 
 const cargarClientesHtml = () => {
 
+    const clientesJson = localStorage.getItem('clientes'); // Obtener datos de localStorage
+    const clientesArray = JSON.parse(clientesJson); // Convertir de JSON a arreglo
+
+    tbody.innerHTML = ''; // Limpiar tabla antes de cargar datos
+
     let filas = ''; // Variable para almacenar filas en formato HTML
 
-    clientes.forEach(cliente => {
+    clientesArray.forEach(cliente => {
 
         filas += `<tr>
                       <td> <input type="checkbox" class="chkCliente" data-id="${cliente.codigo}"></td>
@@ -197,6 +258,25 @@ const cargarClientesHtml = () => {
     chk.addEventListener('click', handleCheckCliente); // Asigna evento a cada checkbox individual
     });
 
+}
+
+// ============================
+// FUNCION PARA AGREGAR CLIENTES
+// ============================
+
+const agregarCliente = () => {
+
+    const clienteNuevo = { 
+        codigo: 0, 
+        nombre: 'Cliente agregado', 
+        correo: 'cliente@agregado.com', 
+        telefono: '4444-4488' 
+    };
+
+    clientes.push(clienteNuevo); // Agregar al arreglo
+    cargarClientesHtml(); // Recargar la tabla
+
+    localStorage.setItem('clientes', JSON.stringify(clientes)); // Guardar en localStorage y no se borre al refrescar
 }
 
 
@@ -246,9 +326,6 @@ const handleCheckCliente = (event) => {
   } else {
     console.log('El cliente no se encuentra');
   }
-
-
-
 
 
 }
