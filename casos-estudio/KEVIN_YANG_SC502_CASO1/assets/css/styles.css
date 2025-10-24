@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.main { 
+    flex:1;
+    background-color: #73bfe271;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#navbarInfo {
+  background-color: #6fcce4;
+  color:rgb(8, 69, 238)
+}
+
+.footer {
+    background-color: #7fa2b371;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: auto;
+}
+
+
