@@ -46,3 +46,21 @@ const validarDatos = () => {
         });
     }
 };
+
+const submitFormulario = () => {
+    event.preventDefault();
+
+    const formulario = document.querySelector("#formulario");
+    const datosFormulario = new FormData(formulario);
+    const data = Object.fromEntries(datosFormulario.entries());
+};
+
+
+const agregarEstudiante = () => {
+    
+}
+
+
+const cargarDatos = () => {
+
+};
