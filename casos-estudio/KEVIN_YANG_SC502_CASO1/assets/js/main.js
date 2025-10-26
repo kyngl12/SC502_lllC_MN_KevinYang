@@ -2,6 +2,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const btnEnviar = document.querySelector("#btnEnviar");
     btnEnviar.addEventListener("click", validarDatos);
 
+    const btnCargar = document.querySelector("#btnCargar");
+    btnCargar.addEventListener("click", cargarDatos);
+
+    const form = document.querySelector('#formulario');
+    formulario.addEventListener('submit', submitFormulario);
+
+    cargarDatos();
+
 });
 
 const validarDatos = () => {
@@ -45,6 +53,8 @@ const validarDatos = () => {
             confirmButtonText: "Aceptar",
         });
     }
+
+    agregarEstudiante(nombre, apellidos, nota);
 };
 
 const submitFormulario = () => {
@@ -55,12 +65,52 @@ const submitFormulario = () => {
     const data = Object.fromEntries(datosFormulario.entries());
 };
 
+let estudiantes = [];
 
-const agregarEstudiante = () => {
-    
+const agregarEstudiante = (nombre, apellidos, nota) => {
+    const estudiante = {
+        nombre: nombre,
+        apellidos: apellidos,
+        nota: nota
+    };
+    estudiantes.push(estudiante);
+    cargarDatos();
+
+    localStorage.setItem('estudiantes', JSON.stringify(estudiantes));
 }
 
 
 const cargarDatos = () => {
+    const tbody = document.querySelector("#tbody-section");
 
+    const estudiantesGuardados = localStorage.getItem('estudiantes');
+    const estudiantesArray = JSON.parse(estudiantesGuardados);
+
+    tbody.innerHTML = "";
+
+    let numero = 0;
+
+    estudiantes.forEach(estudiante => {
+        const fila = document.createElement("tr");
+
+        const celdaNumero = document.createElement("td");
+        celdaNumero.textContent = numero += 1;
+        
+
+        const celdaNombre = document.createElement("td");
+        celdaNombre.textContent = estudiante.nombre;
+
+        const celdaApellidos = document.createElement("td");
+        celdaApellidos.textContent = estudiante.apellidos;
+
+        const celdaNota = document.createElement("td");
+        celdaNota.textContent = estudiante.nota;
+
+        fila.appendChild(celdaNumero);
+        fila.appendChild(celdaNombre);
+        fila.appendChild(celdaApellidos);
+        fila.appendChild(celdaNota);
+
+        tbody.appendChild(fila);
+    });
 };
