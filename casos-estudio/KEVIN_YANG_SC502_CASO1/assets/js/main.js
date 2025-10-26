@@ -5,10 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const btnCargar = document.querySelector("#btnCargar");
     btnCargar.addEventListener("click", cargarDatos);
 
-    const form = document.querySelector('#formulario');
+    const formulario = document.querySelector('#formulario');
     formulario.addEventListener('submit', submitFormulario);
-
-    cargarDatos();
 
 });
 
@@ -55,6 +53,12 @@ const validarDatos = () => {
     }
 
     agregarEstudiante(nombre, apellidos, nota);
+
+    document.querySelector("#nombre").value = "";
+    document.querySelector("#apellidos").value = "";
+    document.querySelector("#nota").value = "";
+
+
 };
 
 const submitFormulario = () => {
@@ -68,25 +72,44 @@ const submitFormulario = () => {
 let estudiantes = [];
 
 const agregarEstudiante = (nombre, apellidos, nota) => {
+
+    const estudiantesGuardados = localStorage.getItem('estudiantes');
+    const estudiantesArray = JSON.parse(estudiantesGuardados);
+
     const estudiante = {
         nombre: nombre,
         apellidos: apellidos,
         nota: nota
     };
     estudiantes.push(estudiante);
-    cargarDatos();
 
     localStorage.setItem('estudiantes', JSON.stringify(estudiantes));
+
 }
 
 
 const cargarDatos = () => {
     const tbody = document.querySelector("#tbody-section");
+    const tabla = document.querySelector("#tabla");
 
     const estudiantesGuardados = localStorage.getItem('estudiantes');
     const estudiantesArray = JSON.parse(estudiantesGuardados);
 
     tbody.innerHTML = "";
+
+    if (estudiantesArray == null) {
+        Swal.fire({
+            title: "No hay datos registrados",
+            text: "Intenta agregar datos antes de cargarlos",
+            icon: "warning",
+            confirmButtonText: "Aceptar",
+        });
+        return;
+    }
+
+    tabla.style.display = "table";
+
+
 
     let numero = 0;
 
@@ -95,7 +118,7 @@ const cargarDatos = () => {
 
         const celdaNumero = document.createElement("td");
         celdaNumero.textContent = numero += 1;
-        
+
 
         const celdaNombre = document.createElement("td");
         celdaNombre.textContent = estudiante.nombre;

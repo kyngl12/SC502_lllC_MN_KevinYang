@@ -3,8 +3,8 @@
     padding: 0;
 }
 
-.main { 
-    flex:1;
+.main {
+    flex: 1;
     background-color: #73bfe271;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -17,9 +17,21 @@ body {
 }
 
 #navbarInfo {
-  background-color: #6fcce4;
-  color:rgb(8, 69, 238)
+    background-color: #6fcce4;
+    color: rgb(8, 69, 238)
 }
+
+hr {
+    height: 8px;
+    background-color: rgb(33, 64, 235);
+}
+
+#alertaCarga {
+    border: 2px solid #28a745;
+    border-radius: 10px;
+    font-size:larger;
+}
+
 
 .footer {
     background-color: #7fa2b371;
@@ -28,5 +40,3 @@ body {
     padding: 10px;
     margin-top: auto;
 }
-
-
