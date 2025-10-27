@@ -63,10 +63,7 @@ const validarDatos = () => {
 
 const submitFormulario = () => {
     event.preventDefault();
-
     const formulario = document.querySelector("#formulario");
-    const datosFormulario = new FormData(formulario);
-    const data = Object.fromEntries(datosFormulario.entries());
 };
 
 let estudiantes = [];
@@ -75,6 +72,10 @@ const agregarEstudiante = (nombre, apellidos, nota) => {
 
     const estudiantesGuardados = localStorage.getItem('estudiantes');
     const estudiantesArray = JSON.parse(estudiantesGuardados);
+
+    if (estudiantesArray != null) {
+        estudiantes = estudiantesArray;
+    }
 
     const estudiante = {
         nombre: nombre,
@@ -86,7 +87,6 @@ const agregarEstudiante = (nombre, apellidos, nota) => {
     localStorage.setItem('estudiantes', JSON.stringify(estudiantes));
 
 }
-
 
 const cargarDatos = () => {
     const tbody = document.querySelector("#tbody-section");
@@ -107,13 +107,10 @@ const cargarDatos = () => {
         return;
     }
 
-    tabla.style.display = "table";
-
-
-
+   
     let numero = 0;
 
-    estudiantes.forEach(estudiante => {
+    estudiantesArray.forEach(estudiante => {
         const fila = document.createElement("tr");
 
         const celdaNumero = document.createElement("td");

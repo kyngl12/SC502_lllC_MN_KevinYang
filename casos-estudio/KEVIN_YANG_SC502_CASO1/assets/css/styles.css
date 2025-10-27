@@ -23,18 +23,17 @@ body {
 
 hr {
     height: 8px;
-    background-color: rgb(33, 64, 235);
+    background-color: rgb(4, 16, 83);
 }
 
-#alertaCarga {
-    border: 2px solid #28a745;
+#alerta {
+    border: 2px solid #3376bd;
     border-radius: 10px;
     font-size:larger;
 }
 
-
 .footer {
-    background-color: #7fa2b371;
+    background-color: #4190b771;
     color: white;
     text-align: center;
     padding: 10px;
