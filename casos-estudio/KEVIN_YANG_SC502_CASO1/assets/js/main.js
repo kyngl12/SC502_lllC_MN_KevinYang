@@ -22,13 +22,15 @@ const validarDatos = () => {
             icon: "error",
             confirmButtonText: "Aceptar",
         });
+        return;
     } else if (apellidos == "") {
         Swal.fire({
             title: "Error al enviar los apellidos",
-            text: "Por favor, Por favor, escribe tus apellidos en formato de texto",
+            text: "Por favor, escribe tus apellidos en formato de texto",
             icon: "error",
             confirmButtonText: "Aceptar",
         });
+        return;
     } else if (nota == "") {
         Swal.fire({
             title: "Error al enviar la nota",
@@ -36,6 +38,7 @@ const validarDatos = () => {
             icon: "error",
             confirmButtonText: "Aceptar",
         });
+        return;
     } else if (nota < 0 || nota > 100) {
         Swal.fire({
             title: "Error al enviar la nota",
@@ -43,6 +46,7 @@ const validarDatos = () => {
             icon: "warning",
             confirmButtonText: "Aceptar",
         });
+        return;
     } else {
         Swal.fire({
             title: "Enviando...",
@@ -50,16 +54,16 @@ const validarDatos = () => {
             icon: "success",
             confirmButtonText: "Aceptar",
         });
+
+        agregarEstudiante(nombre, apellidos, nota);
+
+        document.querySelector("#nombre").value = "";
+        document.querySelector("#apellidos").value = "";
+        document.querySelector("#nota").value = "";
     }
-
-    agregarEstudiante(nombre, apellidos, nota);
-
-    document.querySelector("#nombre").value = "";
-    document.querySelector("#apellidos").value = "";
-    document.querySelector("#nota").value = "";
-
-
 };
+
+
 
 const submitFormulario = () => {
     event.preventDefault();
@@ -107,7 +111,7 @@ const cargarDatos = () => {
         return;
     }
 
-   
+
     let numero = 0;
 
     estudiantesArray.forEach(estudiante => {
