@@ -17,10 +17,11 @@ function require_login(): void { //Si la sesion de usuario no exsise, lleva logi
 }
 
 function current_user(): mixed {
-    if (isset($_SESSION['user_id'])) return null;
-        
+    if (!isset($_SESSION['user_id'])) return null; 
+
     global $pdo;
-    $stmt = $pdo->prepare(query: "SELECT id,username,nombre FROM usuarios WHERE id=?");
+    $stmt = $pdo->prepare("SELECT id, username, nombre FROM usuarios WHERE id=?");
     $stmt->execute([$_SESSION['user_id']]);
-    return $stmt->fetch(); //Si encuentra usuario, lo devuelve como arreglo asociativo
+    return $stmt->fetch(); // Devuelve los datos del usuario si lo encuentra
 }
+
